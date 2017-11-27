@@ -1,0 +1,17 @@
+{% extends 'common/base.html' %}
+
+{% block title %}首页{% endblock %}
+{% block page_content %}
+
+    {% for p in posts %}
+        <div class="media">
+            <div class="media-body">
+                <a href="{{ url_for('movie.movie_info',movie_id=p.postid) }}">{{ p.title }}</a>
+                <a href="{{ url_for('movie.movie_info',movie_id=p.postid) }}">
+                    <img class="media-object" src="{{ p.image }}" style="width: 600px; height: 400px;">
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+    <hr/>
+{% endblock %}
